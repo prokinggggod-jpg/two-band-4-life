@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order Confirmed — Two Band 4 Life</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main style="min-height:100vh;display:grid;place-items:center;padding:32px">
+  <section style="max-width:620px;text-align:center">
+    <p style="letter-spacing:.2em">TWO BAND 4 LIFE</p>
+    <h1 id="title">CHECKING ORDER…</h1>
+    <p id="message">Please wait while we verify your Stripe payment.</p>
+    <a class="checkout" href="/">BACK TO STORE</a>
+  </section>
+</main>
+<script>
+(async () => {
+  const params = new URLSearchParams(location.search);
+  const sessionId = params.get('session_id');
+  const title = document.querySelector('#title');
+  const message = document.querySelector('#message');
+
+  if (!sessionId) {
+    title.textContent = 'ORDER STATUS UNKNOWN';
+    message.textContent = 'No Stripe checkout session was provided.';
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/checkout-session?session_id=' + encodeURIComponent(sessionId));
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Verification failed.');
+
+    if (data.payment_status === 'paid') {
+      title.textContent = 'ORDER CONFIRMED';
+      message.textContent = 'Thanks for your order. Your Stripe payment was confirmed.';
+    } else {
+      title.textContent = 'PAYMENT NOT CONFIRMED';
+      message.textContent = 'Stripe has not marked this checkout as paid yet. Check your Stripe receipt or contact the store if needed.';
+    }
+  } catch (error) {
+    title.textContent = 'ORDER STATUS UNAVAILABLE';
+    message.textContent = 'We could not verify the payment right now. Keep your Stripe receipt for your records.';
+  }
+})();
+</script>
+</body>
+</html>

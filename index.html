@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ツーバンド4ライフ — Two Band 4 Life</title>
+<meta name="description" content="Two Band 4 Life — More than just clothes, it's a lifestyle.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home">ツーバンド4ライフ</a>
+  <nav>
+    <a class="active" href="#home">HOME</a><a href="#shop">SHOP</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+  </nav>
+  <div class="nav-actions"><button aria-label="Search">⌕</button><button aria-label="Account">♙</button><button id="cartBtn" aria-label="Cart">🛒 <span id="cartCount">0</span></button></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-overlay">
+    <div class="jp">ツーバンド4ライフ</div>
+    <div class="en">TWO BAND 4 LIFE</div>
+    <p>MORE THAN JUST CLOTHES,<br>IT'S A LIFESTYLE.</p>
+    <a class="cta" href="#shop">SHOP NOW →</a>
+  </div>
+</section>
+
+<section id="shop" class="section">
+  <div class="section-head"><h2>FEATURED COLLECTION</h2><span>VIEW ALL →</span></div>
+  <div class="products">
+    <article class="product" data-name="Life Tee" data-price="32">
+      <div class="product-art tee">ツーバンド4ライフ</div><h3>LIFE TEE</h3><p>$32.00</p><button class="add">ADD TO CART</button>
+    </article>
+    <article class="product" data-name="Night Hoodie" data-price="54">
+      <div class="product-art hoodie">ツーバンド4ライフ</div><h3>NIGHT HOODIE</h3><p>$54.00</p><button class="add">ADD TO CART</button>
+    </article>
+    <article class="product" data-name="Dreams Sweatpants" data-price="48">
+      <div class="product-art pants">十</div><h3>DREAMS SWEATPANTS</h3><p>$48.00</p><button class="add">ADD TO CART</button>
+    </article>
+    <article class="product" data-name="Logo Cap" data-price="28">
+      <div class="product-art cap">ツーバンド4ライフ</div><h3>LOGO CAP</h3><p>$28.00</p><button class="add">ADD TO CART</button>
+    </article>
+    <article class="product" data-name="Reset Tee" data-price="32">
+      <div class="product-art tee reset">RESET</div><h3>RESET TEE</h3><p>$32.00</p><button class="add">ADD TO CART</button>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="about section">
+  <div><h2>ABOUT ツーバンド4ライフ</h2><p>ツーバンド4ライフ is more than a brand. It's a mindset. It's the late nights, the hard days, the big dreams. We create clothes for people who feel everything, chase more, and never give up.</p><strong>Same vision. Different day.</strong></div>
+  <div class="manifesto"><span>WATCH THE LATEST</span><b>ON YOUTUBE</b><div class="play">▶</div></div>
+  <div id="contact" class="social"><h2>STAY CONNECTED</h2><p>Instagram · YouTube · TikTok · X</p><a href="mailto:prokinggggod@gmail.com">prokinggggod@gmail.com</a><small>ROAD TO 1K</small></div>
+</section>
+</main>
+
+<footer><span>ツーバンド4ライフ</span><div><a href="#home">HOME</a><a href="#shop">SHOP</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div><small>© 2026 TWO BAND 4 LIFE. ALL RIGHTS RESERVED.</small></footer>
+
+<aside id="cart" class="cart">
+  <div class="cart-top"><h2>YOUR CART</h2><button id="closeCart">×</button></div>
+  <div id="cartItems"></div><div class="total">TOTAL <strong id="total">$0.00</strong></div>
+  <button id="checkout" class="checkout">CHECKOUT</button>
+  <p class="note">Checkout is ready to connect to your Stripe/Shopify payment account. Never put private payment keys in this file.</p>
+</aside>
+<div id="shade"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "two-band-4-life-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Two Band 4 Life storefront with Stripe Checkout",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "stripe": "^18.5.0",
+    "dotenv": "^16.4.7"
+  }
+}
